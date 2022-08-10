@@ -106,7 +106,6 @@ dependencies {
     testImplementation "org.mockito:mockito-core:2.25.0"
 
     // Instrumented Unit Tests
-    androidTestImplementation "com.linkedin.dexmaker:dexmaker-mockito:2.12.1"
     androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1"
     androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
     androidTestImplementation "com.google.truth:truth:1.0.1"
