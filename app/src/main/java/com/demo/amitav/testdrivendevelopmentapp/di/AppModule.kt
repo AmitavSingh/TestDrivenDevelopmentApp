@@ -2,6 +2,9 @@ package com.demo.amitav.testdrivendevelopmentapp.di
 
 import android.content.Context
 import androidx.room.Room
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.demo.amitav.testdrivendevelopmentapp.R
 import com.demo.amitav.testdrivendevelopmentapp.data.local.ShoppingDao
 import com.demo.amitav.testdrivendevelopmentapp.data.local.ShoppingItemDatabase
 import com.demo.amitav.testdrivendevelopmentapp.data.remote.PixabayAPI
@@ -52,6 +55,16 @@ object AppModule {
             .build()
             .create(PixabayAPI::class.java)
     }
+
+    @Singleton
+    @Provides
+    fun provideGlideInstance(
+        @ApplicationContext context: Context
+    ) = Glide.with(context).setDefaultRequestOptions(
+        RequestOptions()
+            .placeholder(R.drawable.ic_image)
+            .error(R.drawable.ic_image)
+    )
 }
 
 
